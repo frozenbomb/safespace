@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dog Bot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container chatwindow">
+      <div id="group_bar">
+        <div class="back-button">
+          <a href="main.html"><span class="btn-lg glyphicon glyphicon-menu-left"></span> Main Menu</a>
+        </div>
+        <h3>Members</h3>
+        <div class="user-info">
+          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
+          <h4>User1</h4>
+        </div>
+
+        <div class="user-info">
+          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
+          <h4>User4</h4>
+        </div>
+
+        <div class="user-info">
+          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
+          <h4>User11</h4>
+        </div>
+
+		<div class="user-info">
+          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
+          <h4>User14</h4>
+        </div>
+      </div>
+
+      <div id="chat_area">
+        <div id="chat_box">
+          <u><h2>Dog Bot</h2></u>
+          <div class="message">
+            <img class="user-img" src="assets/ic_account_circle_black_48px.svg">
+            <div class="msg-content">
+              <h4 class="user-name">Dog</h4>
+              <p class="user-msg">Hi, what's wrong?</p>
+            </div>
+          </div>
+      </div>
+      <div id="input_box">
+          <textarea type="text" name="message" placeholder="Type the message here..." class="user_input" id="message-box"></textarea>
+          <div id="buttons" class="btn-group">
+            <a href="#" class="btn btn-default" id="send-btn"><span class="glyphicon glyphicon-send">Send</span></a>
+          </div>
+        </div>
+    </div>
+
+    <div class="bgCover">&nbsp;</div>
+
+    <div class="overlayBox">
+      <div class="overlayContent">
+        <div id="closeButtonBox">
+          <button type="submit" name="button" class="btn btn-danger btn-lg btn-block" id="overlay-close-btn">X</button>
+        </div>
+
+        <div id="overlay-upload-area">
+          <h3>Drag pictures here to upload to group chat.</h3>
+          <p>Alternatively, browse and select the image you want to upload.</p>
+          <input type="file" accept="image/*" id="img-selector">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

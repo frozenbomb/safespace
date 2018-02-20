@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div class="chatwindow container">
+
+      <div id="chat_area">
+            <div id="top-buttons">
+
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>Vent to Group</h2>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form-horizontal addmember-form" role="form">
+                        <h3>Topic</h3>
+                        <div class="form-group">
+                            <input type="name" class="form-control" name="inputUsername" placeholder="Work, School, etc">
+                        </div>
+                        <h3>Description</h3>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="inputEmail" placeholder="Describe what happened :)">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Ok</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          <h1 class="family-title">Safe Space</h1>
+
+          <div class="users center-block">
+            <div class="user-info-group">
+              <a href="chatAI.html">
+                <img class="user-img-small" src="assets/ic_cloud_queue_black_48px.svg">
+                <h4>Vent to AI</h4>
+              </a>
+            </div>
+            <div class="user-info-group" id="addmember" data-toggle="modal" data-target=".bs-example-modal-lg">
+              <img class="user-img-small" src="assets/ic_cloud_queue_black_48px.svg">
+              <h4>Vent to Group</h4>
+            </div>
+            <div class="user-info-group">
+              <img class="user-img-small" src="assets/ic_cloud_queue_black_48px.svg">
+              <h4>Listen to Vent</h4>
+            </div>
+            <div class="user-info-group">
+              <img class="user-img-small" src="assets/ic_cloud_queue_black_48px.svg">
+              <h4>Relax</h4>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </body>
+</html>
