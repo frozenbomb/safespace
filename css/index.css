@@ -1,0 +1,66 @@
+html, body{
+    height: 100%;
+}
+
+.topicRow{
+    text-align: center;
+    padding-top: 10px;
+    font-size: large;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #ffe6cb;
+    border-radius: 20px;
+    color: #f5886e;
+    padding: 20px 0px;
+    list-style-type: none;
+    text-indent: 20px;
+    margin: 20px 20px 0px 20px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	margin-top: -20px;
+}
+
+.speechRight:after{
+    right: 0;    
+	border-left-color: #ffe6cb;
+    border-right: 0;
+    margin-right: -13px;
+}
+
+.speechRight{
+    background: #ffe6cb;
+    color: #f5886e;      
+}
+
+.speechLeft:after{
+    left: 0;    
+	border-right-color: #c7eafc;
+    border-left: 0;
+    margin-left: -13px;
+}
+
+.speechLeft{ 
+	background: #c7eafc;
+    color: #45829b;   
+}
+
+.popOut{
+    cursor: pointer;
+}
+
+.popOut:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.hide{
+    display:none;
+}

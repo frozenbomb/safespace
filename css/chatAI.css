@@ -1,0 +1,31 @@
+.chatAI{
+    background-color: rgba(241, 241, 241, 0.993);
+    height:85%;
+}
+
+.messages {
+    width: 90%;
+    position: absolute;
+    bottom: 80px;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sendButton{
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.chatAI .bottomInput{
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+.chatAI .bottomInput #messageInput{
+    margin-right: 10px;
+    border-radius: 10px;
+}

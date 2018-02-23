@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>SafeSpace</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand bg-dark navbar-dark">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-toggle="dropdown">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="pageAI" href="#">DogBot</a>
+                    <a class="dropdown-item" id="pageVent" href="#">Vent</a>
+                    <a class="dropdown-item" id="pageListen" href="#">Listen</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item disabled" href="#">Music</a>
+                    <a class="dropdown-item disabled" href="#">Activities</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- AI Chat -->
+    <div class="container-fluid chatAI">
+        <div class="row">
+            <ul class="messages">
+                <li class="speech-bubble speechRight">Hi I'm dogBot. How are you today?</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="input-group bottomInput">
+                <input type="text" class="form-control" id="messageInput" placeholder="Vent Here...">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary sendButton" id="messageButton" type="button" aria-label="">Send</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Chat -->
+    <div class="container-fluid chatLive hide">
+        <div class="row topicRow justify-content-center">
+            <div class="col-sm-1">
+                <i class="fa fa-user" aria-hidden="true"></i> 4</div>
+            <div class="col-sm-6" id="ventTopic">Topic</div>
+            <div class="col-sm-1 topicEdit popOut" data-toggle="modal" data-target="#editTopicModal">
+                <i class="fa fa-edit" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="messagesVent"></ul>
+        </div>
+        <div class="row">
+            <div class="input-group bottomVentInput">
+                <input type="text" class="form-control" id="messageVentInput" placeholder="Vent Here...">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary sendButton" id="messageVentButton" type="button" aria-label="">Send</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listen Chat -->
+    <div class="container-fluid chatListen hide">
+        <div class="row topicRow justify-content-center">
+            <div class="col-sm-1 popOut">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-6">Topic</div>
+            <div class="col-sm-1 popOut">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="messagesEmoji">
+                <li class="speech-bubble speechLeft">Today I had the worst day ever.</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="input-group emojiWrapper">
+                <input type="text" class="form-control" id="emojiInput" placeholder="Vent Here...">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary sendButton" id="emojiSend" type="button" aria-label="">Send</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Topic Modal -->
+    <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="editTopicInput">Enter New Topic</label>
+                        <input type="text" class="form-control" name="editTopicInput" id="editTopicInput" placeholder="Changed the subject?">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="newTopicButton">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Live Chat Modal -->
+    <div class="modal fade" id="newLiveChatModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newLiveChatTopic">Enter New Topic</label>
+                        <input type="text" class="form-control" name="newLiveChatTopic" id="newLiveChatTopic" placeholder="What are you venting about?">
+                        <label for="newLiveChatTopic">Vent Here</label>
+                        <textarea class="form-control" id="newLiveChatBody" rows="6" cols="50" placeholder="What's on your mind?"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="newLiveChatButton">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/chatAI.css">
+    <link rel="stylesheet" href="css/chatLive.css">
+    <link rel="stylesheet" href="css/chatListen.css">
+    <script src="js/index.js"></script>
+</body>
+
+</html>

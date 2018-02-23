@@ -1,0 +1,21 @@
+.chatListen{
+    background-color: rgba(241, 241, 241, 0.993);
+    height:85%;
+}
+
+.emojiWrapper{
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+.messagesEmoji {
+    width: 90%;
+    position: absolute;
+    bottom: 80px;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
