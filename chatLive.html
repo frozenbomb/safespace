@@ -26,6 +26,7 @@
     <!-- Our css and scripts -->
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/chatLive.css">
+    <link rel="stylesheet" href="css/animate.css">
     <script src="js/script.js"></script>
     <script src="js/chatLiveScript.js"></script>
 
@@ -55,17 +56,17 @@
                     </div>
                 </div>
 
-                <!-- Row for Cloud -->
-                <div class="emoji_area">
-
-                <div class="row">
-                    <div class="chatLiveCloud col-sm-12">
-                        <img class="chatLiveImg popout" src="assets/liveChatCloud.svg" data-toggle="modal" data-target="#cloudModal">
-                        <div class="cloudMsgCenter block-with-text" id="chatLiveMsg">Hi, what's wrong?</div>
+                <!-- Row for Cloud --> 
+                <!-- Emojis should be able to go higher than the cloud (all around) so cloud within emoji area-->
+                <div class="emoji_area" id="emoji-area">
+                    <div class="row">
+                        <div class="chatLiveCloud col-sm-12">
+                            <img class="chatLiveImg popout" src="assets/liveChatCloud.svg" data-toggle="modal" data-target="#cloudModal">
+                            <div class="cloudMsgCenter block-with-text" id="chatLiveMsg">Hi, what's wrong?</div>
+                        </div>
                     </div>
-                </div>
-                <div class="emojis">
-                        <img src="https://imgur.com/a6FwBWM.png" id = "heart1" alt="heart1" height="42" width="42">
+                    <div class="emojis">
+                            <img src="https://imgur.com/a6FwBWM.png" id = "heart1" alt="heart1" height="42" width="42">
                     </div>
                 </div>
 

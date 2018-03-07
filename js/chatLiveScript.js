@@ -7,6 +7,7 @@ $(function () {
 
     $('#chatLiveSendMsg').click(function () {
         updateCloudText();
+        createHearts();
         $("#chatLiveMsgInput").val('');
     });
 
@@ -19,7 +20,8 @@ $(function () {
     $('.emoji_area')
    .find('.emojis')
    .animate({
-         top: 60
+         top: 0,
+         left: 150
       },
       'slow'
    );
@@ -60,3 +62,21 @@ function editTopic() {
         $("#editTopicInput").val('');
     }
 };
+
+function createHearts(){
+    var imgDestination = document.getElementById("emoji-area");
+    var imgAdded = document.createElement("img");
+    imgAdded.src = "https://imgur.com/a6FwBWM.png";
+    imgAdded.height="42" 
+    imgAdded.width="42"
+    imgDestination.appendChild(imgAdded);
+    heartInitialPosition(imgAdded);
+};
+
+
+function heartInitialPosition(imgAdded){
+    var imagestyle = imgAdded.style;
+    imagestyle.position = "absolute";
+    imagestyle.left = "350px";
+    imagestyle.top = "50px";
+}
