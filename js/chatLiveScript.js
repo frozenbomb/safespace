@@ -83,6 +83,10 @@ function createHearts(){
         loopImg.src = "https://imgur.com/a6FwBWM.png";
         loopImg.height=42;
         loopImg.width=42;
+        //loopImg.addEventListener('click', popHeart1(currID));
+        //loopImg.addEventListener('click', function(){ popBubble(currID)});
+        loopImg.addEventListener('click', function(){ popBubble(this)});
+        //loopImg.onclick=popBubble(currID);
         imgDestination.appendChild(loopImg);
         heartInitialPosition(loopImg);
 
@@ -145,6 +149,18 @@ function heartInitialPosition(imgAdded){
 
 function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function popHeart1(word)
+{
+    //document.getElementById("heart1").classList.add("emoji_area");
+    jQuery('#heart1').addClass('animated zoomOut');
+    console.log(word);
+}
+
+function popBubble(popID)
+{
+    jQuery(popID).addClass('animated zoomOut');
 }
 
 (function( $ ){
