@@ -14,6 +14,15 @@ $(function () {
     $("#newTopicButton").click(function () {
         editTopic();
     });
+
+    // move emoji code by Glenn
+    $('.emoji_area')
+   .find('.emojis')
+   .animate({
+         top: 60
+      },
+      'slow'
+   );
 });
 
 /*Set topic and initial message*/
