@@ -454,3 +454,12 @@ h4 {
     padding-right: 5%;
     padding-left: 5%;
 }
+
+.dogPFP {
+    height: 70px;
+    margin: 0;
+    border-radius: 100%;
+    margin-bottom: 5%;
+    border-radius: 50%;
+    background: purple;
+}

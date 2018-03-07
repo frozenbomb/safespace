@@ -89,7 +89,7 @@ $(document).ready(function() {
 		else {
 			replied = "I will see what i can do";
 		}
-		$("#chat_box").append('<div class="message"><img class="user-img" src="assets/ic_account_circle_black_48px.svg"><div class="msg-content"><h4 class="user-name">Dog</h4><p class="user-msg">' + replied + '</p></div></div>');
+		$("#chat_box").append('<div class="message"> <img class="dogPFP user-img animated zoomIn" src="http://img15.deviantart.net/257d/i/2013/276/4/a/lovin_oven_dog_by_mannydragon5-d6p3i1h.png"><div class="msg-content"><h4 class="user-name">Dog</h4><p class="user-msg">' + replied + '</p></div></div>');
 
 		$("#chat_box").scrollTop($("#chat_box")[0].scrollHeight);
 	}
@@ -195,34 +195,35 @@ $(document).ready(function() {
     	doOverlayClose();
 	});
 
-	// $('.overlayBox').on({
-	// 	'dragover dragenter': function(e)
-	// 	{
-	//         e.preventDefault();
-	//         e.stopPropagation();
-	//     },
-	//     'drop': function(e)
-	//     {
-	//     	var dataTransfer = e.originalEvent.dataTransfer;
+	$('.overlayBox').on({
+		'dragover dragenter': function(e)
+		{
+	        e.preventDefault();
+	        e.stopPropagation();
+	    },
+	    'drop': function(e)
+	    {
+	    	var dataTransfer = e.originalEvent.dataTransfer;
 
-	//         if(dataTransfer && dataTransfer.files.length)
-	//         {
-	//             e.preventDefault();
-	//             e.stopPropagation();
+	        if(dataTransfer && dataTransfer.files.length)
+	        {
+	            e.preventDefault();
+	            e.stopPropagation();
 
-    //           	var reader = new FileReader();
+              	var reader = new FileReader();
 
-	//            	reader.onload = function(e)
-	// 	        {
-	// 	        	selectedImage = e.target.result;
+	           	reader.onload = function(e)
+		        {
+		        	selectedImage = e.target.result;
 
-	// 	            $('#overlay-upload-area').html('<img src="' + selectedImage + '"></img>');
-	// 	            $("#overlay-upload-area").append("<h3>Are you sure you want to upload this picture?</h3>");
-	// 	            $('#overlay-upload-area').append('<div id="upload-buttons"><button class="btn btn-success btn-lg btn-block" id="confirm-upload-btn">Yes</button><button class="btn btn-danger btn-lg btn-block" id="cancel-upload-btn">No</button></div>');
-	// 	        }
+		            $('#overlay-upload-area').html('<img src="' + selectedImage + '"></img>');
+		            $("#overlay-upload-area").append("<h3>Are you sure you want to upload this picture?</h3>");
+		            $('#overlay-upload-area').append('<div id="upload-buttons"><button class="btn btn-success btn-lg btn-block" id="confirm-upload-btn">Yes</button><button class="btn btn-danger btn-lg btn-block" id="cancel-upload-btn">No</button></div>');
+		        }
 
-	// 	        reader.readAsDataURL(dataTransfer.files[0]);
-	//     	}
-	// 	}
-	// });
+		        reader.readAsDataURL(dataTransfer.files[0]);
+	    	}
+		}
+		//$(".user-img").addClass("animated bounce");
+	});
 });
