@@ -22,6 +22,7 @@
 
     <!-- Our css and scripts -->
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/chatLive.css">
     <script src="js/script.js"></script>
     <script src="js/chatLiveScript.js"></script>
 </head>
@@ -30,38 +31,45 @@
     <div class="container chatwindow">
 
         <div id="chat_area">
+
+            <!-- Chat Box -->
             <div id="chat_box">
 
+                <!-- Top Row -->
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="back-button">
                             <a href="main.html">
-                                <span class="btn-lg glyphicon glyphicon-menu-left"></span> Main Menu</a>
+                                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Main Menu</a>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <h2 id="chatLiveTopic">Topic</h2>
                     </div>
-                </div>
-
-                <div class="message">
-                    <div class="msg-content">
-                        <p class="user-msg" id="chatLiveMsg">Hi, what's wrong?</p>
+                    <div class="col-sm-1 topicEdit popout" data-toggle="modal" data-target="#editTopicModal">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
                     </div>
                 </div>
+
+                <!-- Row for Cloud -->
+                <div class="row">
+                    <div class="chatLiveCloud col-sm-12">
+                        <img class="chatLiveImg popout" src="assets/liveChatCloud.svg" data-toggle="modal" data-target="#cloudModal">
+                        <div class="cloudMsgCenter block-with-text" id="chatLiveMsg">Hi, what's wrong?</div>
+                    </div>
+                </div>
+
+                <!-- Emoji HTML Here -->
+
             </div>
 
-            <div id="input_box">
-                <textarea type="text" name="message" placeholder="Type the message here..." class="user_input" id="message-box"></textarea>
-                <div id="buttons" class="btn-group">
-                    <a href="#" class="btn btn-default" id="send-btn">
-                        <span class="glyphicon glyphicon-send">Send</span>
-                    </a>
-                </div>
+            <div class="chatInput">
+                <textarea name="message" placeholder="Type the message here..." class="chatLiveInput" id="chatLiveMsgInput"></textarea>
+                <button type="button" class="btn btn-info chatLiveInputButton" id="chatLiveSendMsg">Send</button>
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Initial Info Modal -->
         <div class="modal fade" id="chatLiveModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -76,13 +84,46 @@
                             </div>
                             <h3>Description</h3>
                             <div class="form-group">
-                                <textarea class="form-control" rows="5" id="inputChatMsg" placeholder="Describe what happened :)"></textarea>
+                                <textarea class="form-control" rows="5" id="inputChatMsg" placeholder="Describe what happened"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="button" class="btn btn-default" id="chatLiveModalBtn">Submit</button>
                                 <a href="main.html" class="btn btn-default">Cancel</a>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Cloud Text Modal -->
+        <div class="modal fade" id="cloudModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modelTitleId">Full Text</h4>
+                    </div>
+                    <div class="modal-body" id="cloudModalBody"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Topic Modal -->
+        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="editTopicInput">Enter New Topic</label>
+                            <input type="text" class="form-control" name="editTopicInput" id="editTopicInput" placeholder="Changed the subject?">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="newTopicButton">Save</button>
                     </div>
                 </div>
             </div>
