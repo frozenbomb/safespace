@@ -63,20 +63,73 @@ function editTopic() {
     }
 };
 
+var heartCounter = 0;
+
 function createHearts(){
     var imgDestination = document.getElementById("emoji-area");
+
+    //single emoji attempt
     var imgAdded = document.createElement("img");
     imgAdded.src = "https://imgur.com/a6FwBWM.png";
     imgAdded.height="42" 
     imgAdded.width="42"
     imgDestination.appendChild(imgAdded);
     heartInitialPosition(imgAdded);
+
+    //Loop attempt code
+    for (i = 0; i < 5; i++)
+    {
+        var loopImg = document.createElement("img");
+        loopImg.src = "https://imgur.com/a6FwBWM.png";
+        loopImg.height=42;
+        loopImg.width=42;
+        imgDestination.appendChild(loopImg);
+        heartInitialPosition(loopImg);
+
+        heartCounter++;
+        var currID = "heartLoop" + heartCounter;
+        console.log(currID);
+        loopImg.setAttribute("id", currID);
+
+        //below not working
+        /*
+        $('.emoji_area')
+        .find(currID)
+        .animate({
+         top: 30,
+         left: 200
+        },
+        'slow'
+        );
+        */
+        currID ="#"+currID; //do this to get access with jquery below
+
+        //jQuery("#heartLoop1").addClass("animated shake"); //works
+        jQuery(currID).addClass("animated shake");
+        //jQuery("#heart1").animate({top:100, left:0});
+        //jQuery('#my_div').myfunction(currID); //works
+    }
 };
 
 
 function heartInitialPosition(imgAdded){
     var imagestyle = imgAdded.style;
     imagestyle.position = "absolute";
-    imagestyle.left = "350px";
-    imagestyle.top = "50px";
+    var xx = getRandomInt(0, window.innerWidth) +"px";
+    //imagestyle.left = "350px";
+    imagestyle.left = xx;
+    //imagestyle.top = "1000px"; //starting from very bottom
+    imagestyle.top = "350px";
 }
+
+function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+(function( $ ){
+   $.fn.myfunction = function(word) {
+      alert(word); //working
+      $(word).animate({top:30, left:200}); //not working
+      return this;
+   }; 
+})( jQuery );
