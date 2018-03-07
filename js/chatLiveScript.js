@@ -102,12 +102,33 @@ function createHearts(){
         'slow'
         );
         */
-        currID ="#"+currID; //do this to get access with jquery below
 
         //jQuery("#heartLoop1").addClass("animated shake"); //works
-        jQuery(currID).addClass("animated shake");
-        //jQuery("#heart1").animate({top:100, left:0});
+        //jQuery("#"+currID).addClass("animated shake");
+        //jQuery("#heart1").animate({top:100, left:0}); // not works
         //jQuery('#my_div').myfunction(currID); //works
+        //jQuery("#heart1").addClass("animated shake"); //works
+
+        /*
+        jQuery('.emoji_area') // works
+        .find('.emojis')
+        .animate({
+         top: 0,
+         left: 0
+        },
+        'slow'
+        );
+        */
+
+        jQuery('.emoji_area') // WORKS!!!!
+        .find("#"+currID)
+        .animate({
+         top: getRandomInt(0,250)
+        },
+        'slow'
+        );
+
+
     }
 };
 
@@ -118,8 +139,8 @@ function heartInitialPosition(imgAdded){
     var xx = getRandomInt(0, window.innerWidth) +"px";
     //imagestyle.left = "350px";
     imagestyle.left = xx;
-    //imagestyle.top = "1000px"; //starting from very bottom
-    imagestyle.top = "350px";
+    imagestyle.top = "1000px"; //starting from very bottom
+    //imagestyle.top = "350px";
 }
 
 function getRandomInt(min, max) {
