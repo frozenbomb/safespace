@@ -29,122 +29,115 @@
     <link rel="stylesheet" href="css/animate.css">
     <script src="js/script.js"></script>
     <script src="js/chatLiveScript.js"></script>
-
 </head>
 
 <body>
-    <div class="container chatwindow">
-
-        <div id="chat_area">
-
-            <!-- Chat Box -->
-            <div id="chat_box">
-
-                <!-- Top Row -->
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="back-button">
-                            <a href="index.html">
-                                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Main Menu</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <h2 id="chatLiveTopic">Topic</h2>
-                    </div>
-                    <div class="col-sm-1 topicEdit popout" data-toggle="modal" data-target="#editTopicModal">
-                        <i class="fa fa-edit" aria-hidden="true"></i>
-                    </div>
+    <!-- Chat Box -->
+    <div class="chatBoxLive">
+        <!-- Top Row -->
+        <div class="row topBar">
+            <div class="col-sm-2">
+                <div class="back-button">
+                    <a href="index.html">
+                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Main Menu</a>
                 </div>
+            </div>
+            <div class="col-sm-8">
+                <h2 id="chatLiveTopic">Topic</h2>
+            </div>
+            <div class="col-sm-1 topicEdit popout" data-toggle="modal" data-target="#editTopicModal">
+                <i class="fa fa-edit" aria-hidden="true"></i>
+            </div>
+        </div>
 
-                <!-- Row for Cloud -->
-                <!-- Emojis should be able to go higher than the cloud (all around) so cloud within emoji area-->
-                <div class="emoji_area" id="emoji-area">
-                    <div class="row">
-                        <div class="chatLiveCloud col-sm-12">
-                            <img class="chatLiveImg popout" src="assets/liveChatCloud.svg" data-toggle="modal" data-target="#cloudModal">
-                            <div class="cloudMsgCenter block-with-text" id="chatLiveMsg">Hi, what's wrong?</div>
-                        </div>
-                    </div>
-                    <div class="emojis">
-                            <img src="https://imgur.com/a6FwBWM.png" id = "heart1" alt="heart1" height="42" width="42" onclick="popHeart1('seal')">
-                    </div>
+        <!-- Row for Cloud -->
+        <!-- Emojis should be able to go higher than the cloud (all around) so cloud within emoji area-->
+        <div class="emoji_area" id="emoji-area">
+            <div class="row">
+                <div class="chatLiveCloud col-sm-12">
+                    <img class="chatLiveImg popout" src="assets/liveChatCloud.svg" data-toggle="modal" data-target="#cloudModal">
+                    <div class="cloudMsgCenter block-with-text" id="chatLiveMsg">Hi, what's wrong?</div>
                 </div>
+            </div>
+            <div class="emojis">
+                <img src="https://imgur.com/a6FwBWM.png" id="heart1" alt="heart1" height="42" width="42" onclick="popHeart1('seal')">
+            </div>
+        </div>
 
-                <!-- Emoji HTML Here -->
-                <!--
+        <!-- Emoji HTML Here -->
+        <!--
                 <div class="emoji_area">
                     <div class="emojis">
                         <img src="https://imgur.com/a6FwBWM.png" id = "heart1" alt="heart1" height="42" width="42">
                     </div>
                 </div>-->
 
-            </div>
+    </div>
 
-            <div class="chatInput">
-                <textarea name="message" placeholder="Type the message here..." class="chatLiveInput" id="chatLiveMsgInput"></textarea>
-                <button type="button" class="btn btn-info chatLiveInputButton" id="chatLiveSendMsg">Send</button>
-            </div>
-        </div>
+    <div class="chatInput">
+        <textarea name="message" placeholder="Type the message here..." class="chatLiveInput" id="chatLiveMsgInput"></textarea>
+        <button type="button" class="btn btn-info chatLiveInputButton" id="chatLiveSendMsg">Send</button>
+    </div>
 
-        <!-- Initial Info Modal -->
-        <div class="modal fade" id="chatLiveModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Vent to Group</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal addmember-form" role="form">
-                            <h3>Topic</h3>
-                            <div class="form-group">
-                                <input type="name" class="form-control" id="inputChatTopic" placeholder="Work, School, etc">
-                            </div>
-                            <h3>Description</h3>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" id="inputChatMsg" placeholder="Describe what happened"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-default" id="chatLiveModalBtn">Submit</button>
-                                <a href="index.html" class="btn btn-default">Cancel</a>
-                            </div>
-                        </form>
-                    </div>
+    <!-- Initial Info Modal -->
+    <div class="modal fade" id="chatLiveModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Vent to Group</h2>
                 </div>
-            </div>
-        </div>
-
-        <!-- Full Cloud Text Modal -->
-        <div class="modal fade" id="cloudModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="modelTitleId">Full Text</h4>
-                    </div>
-                    <div class="modal-body" id="cloudModalBody"></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Edit Topic Modal -->
-        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
+                <div class="modal-body">
+                    <form class="form-horizontal addmember-form" role="form">
+                        <h3>Topic</h3>
                         <div class="form-group">
-                            <label for="editTopicInput">Enter New Topic</label>
-                            <input type="text" class="form-control" name="editTopicInput" id="editTopicInput" placeholder="Changed the subject?">
+                            <input type="name" class="form-control" id="inputChatTopic" placeholder="Work, School, etc">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="newTopicButton">Save</button>
-                    </div>
+                        <h3>Description</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" id="inputChatMsg" placeholder="Describe what happened"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id="chatLiveModalBtn">Submit</button>
+                            <a href="index.html" class="btn btn-default">Cancel</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Full Cloud Text Modal -->
+    <div class="modal fade" id="cloudModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modelTitleId">Full Text</h4>
+                </div>
+                <div class="modal-body" id="cloudModalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Topic Modal -->
+    <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="editTopicInput">Enter New Topic</label>
+                        <input type="text" class="form-control" name="editTopicInput" id="editTopicInput" placeholder="Changed the subject?">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="newTopicButton">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

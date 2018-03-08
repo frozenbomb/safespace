@@ -9,7 +9,7 @@ $(document).ready(function() {
 		var message = $("#message-box").val();
 		$("#message-box").val("");
 
-		$("#chat_box").append('<div class="message"><img class="user-img" src="assets/ic_account_circle_black_48px.svg"><div class="msg-content"><h4 class="user-name">Dog</h4><p class="user-msg">' + message + '</p></div></div>');
+		$("#chat_box").append('<div class="message"><img class="user-img" src="assets/ic_account_circle_black_48px.svg"><div class="msg-content"><h4 class="user-name">You</h4><p class="user-msg">' + message + '</p></div></div>');
 		var replied = ""
 		if (message == "hi"){
 			replied = "hey, how are you?";

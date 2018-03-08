@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
+    <title>Dog Bot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-git1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Our css and scripts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/script.js"></script>
+</head>
+<!-- 
+<head>
     <meta charset="utf-8">
     <title>Dog Bot</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/animate.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/script.js"></script>
-  </head>
+</head> -->
 
-  <body>
-    <div class="container chatwindow">
-      <div id="group_bar">
-        <div class="back-button">
-          <a href="index.html"><span class="btn-lg glyphicon glyphicon-menu-left"></span> Main Menu</a>
-        </div>
-        <h3>Members</h3>
-        <div class="user-info">
-          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
-          <h4>User1</h4>
-        </div>
+<body>
+    <div id="chat_box">
+        <div class="row topBar">
+            <div class="col-sm-2">
 
-        <div class="user-info">
-          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
-          <h4>User4</h4>
-        </div>
+                <a href="index.html">
+                    <div class="back-button">
+                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Main Menu 
+                    </div>
+                </a>
 
-        <div class="user-info">
-          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
-          <h4>User11</h4>
+            </div>
+            <div class="col-sm-8">
+                <h2 class="AITitle">Dog Bot</h2>
+            </div>
         </div>
 
-		<div class="user-info">
-          <img class="user-img-small" src="assets/ic_account_circle_black_48px.svg">
-          <h4>User14</h4>
-        </div>
-      </div>
-
-      <div id="chat_area">
-        <div id="chat_box">
-          <u><h2>Dog Bot</h2></u>
-          <div class="message">
+        <div class="row message">
             <img class="dogPFP user-img animated zoomIn" src="http://img15.deviantart.net/257d/i/2013/276/4/a/lovin_oven_dog_by_mannydragon5-d6p3i1h.png">
             <div class="msg-content">
-              <h4 class="user-name">Dog</h4>
-              <p class="user-msg">Hi, what's wrong?</p>
+                <h4 class="user-name">Dog</h4>
+                <p class="user-msg">Hi, what's wrong?</p>
             </div>
-          </div>
-      </div>
-      <div id="input_box">
-          <textarea type="text" name="message" placeholder="Type the message here..." class="user_input" id="message-box"></textarea>
-          <div id="buttons" class="btn-group">
-            <a href="#" class="btn btn-default" id="send-btn"><span class="glyphicon glyphicon-send">Send</span></a>
-          </div>
         </div>
     </div>
-
-    <div class="bgCover">&nbsp;</div>
-
-    <div class="overlayBox">
-      <div class="overlayContent">
-        <div id="closeButtonBox">
-          <button type="submit" name="button" class="btn btn-danger btn-lg btn-block" id="overlay-close-btn">X</button>
+    
+    <div class="chatInput">
+            <textarea name="message" placeholder="Type the message here..." class="chatLiveInput" id="message-box"></textarea>
+            <button type="button" class="btn btn-info chatLiveInputButton" id="send-btn">Send</button>
         </div>
+</body>
 
-        <div id="overlay-upload-area">
-          <h3>Drag pictures here to upload to group chat.</h3>
-          <p>Alternatively, browse and select the image you want to upload.</p>
-          <input type="file" accept="image/*" id="img-selector">
-        </div>
-      </div>
-    </div>
-  </body>
 </html>

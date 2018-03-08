@@ -15,7 +15,16 @@
 }
 
 .topicEdit {
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.chatBoxLive{
+    height: 85%;    
+    overflow: hidden;
+}
+
+.chatBoxLive h2{
     text-align: center;
 }
 
@@ -70,28 +79,6 @@
     margin-top: 0.2em;
     /* bg color = bg color under block */
     background: white;
-}
-
-.chatInput{
-    display: flex;
-    height: 15%;
-    background: #f4e2ba;
-}
-
-.chatLiveInput {
-    height: 60%;
-    width: 80%;   
-    margin-top: 20px;
-    margin-left: 30px;
-    border-radius: 10px;
-}
-
-.chatLiveInputButton {
-    height: 40%;
-    margin-top: 30px;
-    margin-left: 10px;
-    padding: 10px 30px;
-    border-radius: 10px;
 }
 
 .emoji_area
