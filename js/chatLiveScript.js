@@ -3,11 +3,12 @@ $(function () {
 
     $('#chatLiveModalBtn').click(function () {
         newLiveChat();
+        heartInterval();
     });
 
     $('#chatLiveSendMsg').click(function () {
         updateCloudText();
-        createHearts();
+        //createHearts();
         $("#chatLiveMsgInput").val('');
     });
 
@@ -69,18 +70,23 @@ function createHearts(){
     var imgDestination = document.getElementById("emoji-area");
 
     //single emoji attempt
+
+    /*
     var imgAdded = document.createElement("img");
     imgAdded.src = "https://imgur.com/a6FwBWM.png";
     imgAdded.height="42" 
     imgAdded.width="42"
     imgDestination.appendChild(imgAdded);
     heartInitialPosition(imgAdded);
+    */
 
     //Loop attempt code
-    for (i = 0; i < 5; i++)
+    var numHearts = getRandomInt(3,7)
+
+    for (i = 0; i < numHearts; i++)
     {
         var loopImg = document.createElement("img");
-        loopImg.src = "https://imgur.com/a6FwBWM.png";
+        loopImg.src = "https://imgur.com/HZyVCQY.png";
         loopImg.height=42;
         loopImg.width=42;
         //loopImg.addEventListener('click', popHeart1(currID));
@@ -161,6 +167,12 @@ function popHeart1(word)
 function popBubble(popID)
 {
     jQuery(popID).addClass('animated zoomOut');
+}
+
+function heartInterval()
+{
+    var intervalLength = getRandomInt(3000,6000)
+    setInterval(createHearts,intervalLength);
 }
 
 (function( $ ){
