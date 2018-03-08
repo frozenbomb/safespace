@@ -6,7 +6,7 @@ html {
 body {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: #413939;
+    background: #f7f7f7;
     padding: 0;
     margin: 0;
 }
@@ -17,10 +17,6 @@ h1,ul {
 
 legend {
     text-align: center;
-}
-
-.signin-form a {
-
 }
 
 h1{
@@ -171,52 +167,62 @@ img {
 }
 
 #chat_box{
-    height: 85%;
-    overflow-y: scroll;
+    height: 85%;    
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #chat_box h2{
     text-align: center;
 }
 
-#input_box{
+.chatInput{
     display: flex;
     height: 15%;
     background: #f4e2ba;
 }
 
-.user_input{
-    width: 70%;
-    margin: 2%;
+.chatLiveInput {
+    height: 60%;
+    width: 80%;   
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 10px;
 }
 
-#input_box textarea[type="text"]{
-    border: 0;
-    background: #f3f6fa;
+.chatLiveInputButton {
     height: 40%;
-    margin: auto 2%;
+    margin-top: 30px;
+    margin-left: 10px;
+    padding: 10px 30px;
+    border-radius: 10px;
 }
-
-#input_box textarea[type="text"]:focus{
-    border: 0;
-    box-shadow: 1px 1px 10px 1px black;
-}
-
 
 #buttons{
     margin: auto 0;
 }
 
-.back-button {
-    background: lightgoldenrodyellow;
-    text-decoration: none;
+.topBar {  
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: solid 1px rgb(226, 226, 226);
 }
 
-.back-button a {
+.back-button {
+    background: lightgoldenrodyellow;
+    height: 100%;
+    padding-top: 5px;
+}
+
+.topBar a {
     color: #607d8b;
-    text-decoration: none;
     font-size: 20px;
+    text-decoration: none;
     border: 0;
+}
+
+.AITitle {
+    padding: 10px;    
 }
 
 .form{
