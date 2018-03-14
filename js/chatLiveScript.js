@@ -66,7 +66,7 @@ function editTopic() {
 
 var heartCounter = 0;
 
-function createHearts(){
+function createEmojis(){
     var imgDestination = document.getElementById("emoji-area");
 
     //single emoji attempt
@@ -86,7 +86,8 @@ function createHearts(){
     for (i = 0; i < numHearts; i++)
     {
         var loopImg = document.createElement("img");
-        loopImg.src = "https://imgur.com/HZyVCQY.png";
+        //loopImg.src = "https://imgur.com/HZyVCQY.png";
+        loopImg.src = emojiRandomizer();
         loopImg.height=42;
         loopImg.width=42;
         //loopImg.addEventListener('click', popHeart1(currID));
@@ -172,7 +173,26 @@ function popBubble(popID)
 function heartInterval()
 {
     var intervalLength = getRandomInt(3000,6000)
-    setInterval(createHearts,intervalLength);
+    setInterval(createEmojis,intervalLength);
+}
+
+// note const doesn't work on old IE browser versions
+const HEART_EMOJI = "https://imgur.com/HZyVCQY.png";
+const CRY_EMOJI = "https://imgur.com/PRYkCj3.png";
+const TEARY_EMOJI = "https://imgur.com/50K3UDr.png";
+const EAR_EMOJI = "https://imgur.com/jE5sEab.png";
+const TWO_HEARTS_EMOJI = "https://imgur.com/ysDnhbK.png";
+const PRAY_EMOJI = "https://imgur.com/d3UgPNs.png";
+
+var emojiArray = [HEART_EMOJI, CRY_EMOJI, TEARY_EMOJI, EAR_EMOJI, TWO_HEARTS_EMOJI, PRAY_EMOJI];
+
+function emojiRandomizer()
+{
+    length = emojiArray.length;
+    var currEmoji;
+    var index = getRandomInt(0,length-1);
+    currEmoji = emojiArray[index];
+    return currEmoji;
 }
 
 (function( $ ){
