@@ -111,13 +111,20 @@ $(document).ready(function() {
 				var inBetween;
 				//inBetween = JSON.parse(data.result.fulfillment.speech);
 				console.log(JSON.stringify(data.result.fulfillment.speech));
+
 				//response = JSON.stringify(data.result.fulfillment.speech);
 				//response = JSON.stringify(JSON.parse(data.result.fulfillment.speech));
 				//resposne = JSON.parse(data);
 				//inBetween = JSON.parse(data);
 				//console.log(inBetween.result);
 
-				response = JSON.stringify(data.result.fulfillment.speech);
+				//console.log(data.result.fulfillment.speech);
+
+				// below line causing quotations, prob b/c its already stringified as noted above ^^
+				//response = JSON.stringify(data.result.fulfillment.speech);
+				response = data.result.fulfillment.speech;
+
+
 				//response = JSON.parse(JSON.stringify(data.result.fulfillment.speech));
 				//console.log("response " + JSON.stringify(response));
 				//response = JSON.stringify(response);
