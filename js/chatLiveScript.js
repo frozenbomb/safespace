@@ -64,7 +64,7 @@ function editTopic() {
     }
 };
 
-var heartCounter = 0;
+var emojiCounter = 0;
 
 function createEmojis(){
     var imgDestination = document.getElementById("emoji-area");
@@ -81,7 +81,7 @@ function createEmojis(){
     */
 
     //Loop attempt code
-    var numHearts = getRandomInt(3,7)
+    var numHearts = getRandomInt(1,3)
 
     for (i = 0; i < numHearts; i++)
     {
@@ -97,8 +97,8 @@ function createEmojis(){
         imgDestination.appendChild(loopImg);
         heartInitialPosition(loopImg);
 
-        heartCounter++;
-        var currID = "heartLoop" + heartCounter;
+        emojiCounter++;
+        var currID = "heartLoop" + emojiCounter;
         console.log(currID);
         loopImg.setAttribute("id", currID);
 
@@ -167,12 +167,15 @@ function popHeart1(word)
 
 function popBubble(popID)
 {
+    emojiCounter--;
+    console.log("emoji counter pop: "+emojiCounter);
     jQuery(popID).addClass('animated zoomOut');
+
 }
 
 function heartInterval()
 {
-    var intervalLength = getRandomInt(3000,6000)
+    var intervalLength = getRandomInt(5000,7000)
     setInterval(createEmojis,intervalLength);
 }
 
