@@ -129,10 +129,12 @@ $(document).ready(function() {
 				//console.log("response " + JSON.stringify(response));
 				//response = JSON.stringify(response);
 				$("#chat_box").append('<div class="message"> <img class="dogPFP user-img animated zoomIn" src="http://img15.deviantart.net/257d/i/2013/276/4/a/lovin_oven_dog_by_mannydragon5-d6p3i1h.png"><div class="msg-content"><h4 class="user-name">Dog</h4><p class="user-msg">' + response + '</p></div></div>');
+				$("#chat_box").scrollTop($("#chat_box")[0].scrollHeight);
 			},
 			error: function() {
 				//setResponse("Internal Server Error");
 				$("#chat_box").append('<div class="message"> <img class="dogPFP user-img animated zoomIn" src="http://img15.deviantart.net/257d/i/2013/276/4/a/lovin_oven_dog_by_mannydragon5-d6p3i1h.png"><div class="msg-content"><h4 class="user-name">Dog</h4><p class="user-msg">' + "Internal Server Error" + '</p></div></div>');
+				$("#chat_box").scrollTop($("#chat_box")[0].scrollHeight);
 			}
 		});
 		//setResponse("Loading...");
@@ -149,6 +151,12 @@ $(document).ready(function() {
 	$('#overlay-close-btn').click(doOverlayClose);
 
 	$("#send-btn").click(sendMessage);
+	$("#message-box").keypress(function (e) {
+		if (e.which == 13) {
+			sendMessage();
+			return false;
+		}
+	})
 
 	$('#overlay-upload-area').on('click', '#cancel-upload-btn', function(){
     	resetOverlay();
